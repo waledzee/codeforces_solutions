@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>main.cpp</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bbb529;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #cc7832;}
+.s4 { color: #808080;}
+.s5 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.cpp</font>
+</center></td></tr></table>
+<pre><span class="s0">#include </span><span class="s2">&lt;iostream&gt;</span>
+<span class="s0">#include </span><span class="s2">&lt;stack&gt;</span>
+<span class="s3">using namespace  </span><span class="s1">std</span><span class="s3">;</span>
+<span class="s3">int </span><span class="s1">main()</span>
+<span class="s1">{</span>
+    <span class="s4">// sudo code</span>
+    <span class="s4">// input n and a;</span>
+    <span class="s4">// inilize arr[n];</span>
+    <span class="s4">// index in arr</span>
+    <span class="s4">// frist sample</span>
+    <span class="s4">// 6 3</span>
+    <span class="s4">// 1 1 1 0 1 0</span>
+
+    <span class="s4">//if arr(3) ==1  count++</span>
+    <span class="s4">// if arr(a+i) &amp;&amp; arr (a-i) ==1 count+=2;</span>
+
+    <span class="s3">int </span><span class="s1">n</span><span class="s3">, </span><span class="s1">x</span><span class="s3">;</span>
+    <span class="s1">cin&gt;&gt;n&gt;&gt;x</span><span class="s3">;</span>
+    <span class="s3">int </span><span class="s1">arr[n]</span><span class="s3">;</span>
+
+    <span class="s3">for </span><span class="s1">(</span><span class="s3">int </span><span class="s1">i = </span><span class="s5">0</span><span class="s3">; </span><span class="s1">i &lt; n</span><span class="s3">; </span><span class="s1">i++) cin&gt;&gt;arr[i]</span><span class="s3">;</span>
+    <span class="s3">int </span><span class="s1">count = </span><span class="s5">0</span><span class="s3">;</span>
+    <span class="s3">if </span><span class="s1">(arr[x - </span><span class="s5">1</span><span class="s1">] == </span><span class="s5">1</span><span class="s1">) count++</span><span class="s3">;</span>
+
+    <span class="s3">int </span><span class="s1">left = x - </span><span class="s5">2</span><span class="s3">;</span>
+    <span class="s3">int </span><span class="s1">right = x</span><span class="s3">;</span>
+
+    <span class="s3">while </span><span class="s1">(left &gt;= </span><span class="s5">0 </span><span class="s1">|| right &lt; n) {</span>
+        <span class="s3">if </span><span class="s1">(left &gt;= </span><span class="s5">0 </span><span class="s1">&amp;&amp; right &lt; n) {</span>
+            <span class="s3">if </span><span class="s1">(arr[left] + arr[right] == </span><span class="s5">2</span><span class="s1">) count += </span><span class="s5">2</span><span class="s3">;</span>
+        <span class="s1">}</span>
+        <span class="s3">else if </span><span class="s1">(left &gt;= </span><span class="s5">0</span><span class="s1">) count += arr[left]</span><span class="s3">;</span>
+        <span class="s3">else </span><span class="s1">count += arr[right]</span><span class="s3">;</span>
+
+        <span class="s1">left--</span><span class="s3">;</span>
+        <span class="s1">right++</span><span class="s3">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">cout&lt;&lt;count&lt;&lt;endl</span><span class="s3">;</span>
+
+       <span class="s4">// samples</span>
+
+       <span class="s4">// 10 5</span>
+
+       <span class="s4">// 1 1 1 0 0 0 1 0 1 1</span>
+
+
+
+
+
+<span class="s1">}</span></pre>
+</body>
+</html>
